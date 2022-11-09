@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test</title>
+</head>
+
+<body>
+    <style>
+        form {
+            max-width: 600px;
+            margin: auto;
+        }
+
+        .calc {
+            display: grid;
+            grid-template-columns: 80% 20%;
+        }
+
+        .value-from {
+            max-width: 600px;
+        }
+
+        .block-1 {
+            grid-template-columns: 1fr 1fr 1fr;
+            display: grid;
+            column-gap: 20px;
+        }
+
+        .block-1 input {
+            width: 100%;
+            display: block;
+            margin-top: 10px;
+        }
+    </style>
+    <form name="calculator">
+        <input type="textfield" id="valueId" class="value-from" name="ans" value="">
+
+        <div class="calc">
+            <div class="block-1">
+                <div><input type="button" value="1" onClick="document.calculator.ans.value+='1'"></div>
+                <div><input type="button" value="2" onClick="document.calculator.ans.value+='2'"></div>
+                <div><input type="button" value="3" onClick="document.calculator.ans.value+='3'"></div>
+                <div><input type="button" value="4" onClick="document.calculator.ans.value+='4'"></div>
+                <div><input type="button" value="5" onClick="document.calculator.ans.value+='5'"></div>
+                <div><input type="button" value="6" onClick="document.calculator.ans.value+='6'"></div>
+                <div><input type="button" value="7" onClick="document.calculator.ans.value+='7'"></div>
+                <div><input type="button" value="8" onClick="document.calculator.ans.value+='8'"></div>
+                <div><input type="button" value="9" onClick="document.calculator.ans.value+='9'"></div>
+                <div><input type="button" value=""></div>
+                <div><input type="button" value="0" onClick="document.calculator.ans.value+='1'"></div>
+                <div><input type="button" value=""></div>
+            </div>
+            <div class="block-2">
+                <div><input type="button" value="Cancel" onclick="deleteSymb()"></div>
+                <div><input type="reset" value="Clear"></div>
+                <div><input type="button" value="Enter" onclick="alertFunc()"></div>
+            </div>
+        </div>
+    </form>
+
+
+    <script>
+        function alertFunc() {
+            alert(document.getElementById('valueId').value);
+        }
+
+        function deleteSymb() {
+            document.querySelector("#valueId").value = document.querySelector("#valueId").value.slice(0, -1);
+        }
+    </script>
+
+</body>
+
+</html>
